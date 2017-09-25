@@ -12,5 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $.ajax('https://api.themoviedb.org/3/movie/upcoming?api_key=4cd9d92801f92d8885c5df0bcff5b0e6&language=en-US&page=1', {
+    success: function(response) {
+      var upcomingMovies = []
+
+      for (var i = 0; i < response['results'].length; i++){
+        upcomingMovies.push(
+          "<tr>" + "<td><a href='reviews/new/?movie_title="+ response['original_title'] +"'>" + response['original_title'] + "</a></td>" 
+          + "<td>" + response['release_date'] + "</td>" 
+          + "<td>" + 'Action' + "</td>" + "</tr>"
+        );
+      }
+
+      for (var i = 0; i < upcomingMovies.length; i++) {
+        $('#movieList').find('tbody').append(upcomingMovies[i])
+      };
+
+    }
+  });
+});
