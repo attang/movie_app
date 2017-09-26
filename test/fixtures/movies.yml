@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  release_date: 2017-09-26 02:09:12
+  genre: MyString
+  title: MyString
+  movie_id: 1
+
+two:
+  release_date: 2017-09-26 02:09:12
+  genre: MyString
+  title: MyString
+  movie_id: 1
