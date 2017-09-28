@@ -1,5 +1,4 @@
 <div class="container">
-
 	<div class="row">
 		<h2> Leave a review for <span id="movieName"> <%= params[:id]%> </span></h2>
 	</div>
@@ -18,7 +17,7 @@
 		        </div>
 		        <div class="form-group">
 		        <%= f.label :rating %>
-		        <%= f.number_field(:rating, class:"form-control") %> 
+		        <%= f.number_field(:rating, in: 1..5, step: 1, class:"form-control") %> 
 		        </div>
 		        <div class="form-group">
 		        <%= f.label :first_name %>

@@ -15,3 +15,32 @@
  */
 
  
+ /* Home page */
+.movieicon >img {
+	width: 150px;
+	height: 150px;
+	margin-top: 20px;
+}
+
+.col-left {
+	margin-top: 50px;
+}
+
+.col-right {
+	margin-top: 50px;
+	border : 2px solid black;
+}
+
+.container-left {
+	width: inherit;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.movie-node {
+	border: 2px solid black;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
