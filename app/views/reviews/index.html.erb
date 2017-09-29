@@ -1,0 +1,28 @@
+<div class="container">
+	<div class ="row">
+    <div class="col col-md-1"> </div>
+    <div class='col col-md-10 reviews'>
+  		<table class="table table-reviews">
+        <thead>
+            <tr>
+              <th> <h1> All Reviews </h1> </th>
+            <tr>
+        </thead>
+  			<tbody>
+  			<% @reviewList.each do |review, title| %>
+  				<tr> 
+            <td> 
+              <div class="title"> <b> <%= title %> </b> </div>
+              <div class="rating"> <b> Rating: </b> <%= review.rating %>/5 </div> <br>
+              <div class="comment"> <%= review.comment %> </div>
+              <div class="name"> <b> Author: </b> <%= review.first_name %> <%= review.last_name %> </div>
+              <div class="date"> <%= review.created_at.to_date %> </div>
+            </td> 
+          </tr>
+  			<% end %>
+  			</tbody>
+  		</table>
+    </div>
+    <div class="col col-md-1"></div>
+	</div>
+</div>

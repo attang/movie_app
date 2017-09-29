@@ -14,7 +14,17 @@
  *= require_self
  */
 
- 
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
  /* Home page */
 .movieicon >img {
 	width: 150px;
@@ -44,3 +54,26 @@
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
+
+/* Review index */
+
+.table-reviews {
+	margin-top: 30px;
+}
+
+.table-reviews tbody tr td {
+	padding: 20px;
+}
+
+.table-reviews tbody tr td .name {
+	text-align: right;
+}
+
+.table-reviews tbody tr td .date {
+	text-align: right;
+}
+
+
+
+
+

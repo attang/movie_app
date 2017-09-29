@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :movies, only: [:show]
   resources :reviews, except: [:edit, :update, :destroy]
   root 'homes#index'
 

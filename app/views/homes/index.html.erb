@@ -1,12 +1,18 @@
 <div class="container">
-	<h1> Movie application </h1>
+	<h1> Reviewster</h1>
 </div>
 
 
 <div class="container">
 	<div class="row">
+				Sort by: <button> <%= link_to "Title", root_path(:sort => 'title')%> </button>
+					 <button> <%= link_to "Release Date", root_path(:sort => 'date') %> </button>
+			 		 <button> <%= link_to "Genre", root_path(:sort => 'genre')%> </button>
+	<div class="row">
+	<div class="row">
 		<div class='col col-md-8 col-left'>
 			<div class="container container-left">
+
 				<% @movielist.each do |movie, url, reviews| %>
 				<div class="row movie-node">
 					<div class="col col-md-4">
@@ -21,13 +27,14 @@
 							<p> <%= review.rating %>/5 <%= review.comment %> - <%= review.first_name %> 
 								<% review.last_name %> </p>
 						<% end %>
+						<a> <%= link_to "See all reviews", movie_path(movie.id) %> </a>
 					</div>
 				</div>
 				<% end %>
 			</div>
 		</div>
 		<div class='col col-md-4 col-right'>
-			<h3> Recent Review </h3>
+			<h3> Recent Reviews </h3>
 			<table class="table">
 	    		<thead>
 	        		<tr>

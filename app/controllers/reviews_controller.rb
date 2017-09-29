@@ -24,29 +24,27 @@ class ReviewsController < ApplicationController
   	end
 
   	review.movie_id = movie.id
-	if review.save
-		flash[:notice] = "Successfully made a review"
-		redirect_to root_path
-	else
-		render :action => 'new'
-	end
-
-
-  end
-
-  def show
-
+  	if review.save
+  		flash[:notice] = "Successfully made a review"
+  		redirect_to root_path
+  	else
+  		render :action => 'new'
+	  end
   end
 
   def index
-
-
-
+  	@reviewList = []
+  	reviews = Review.all.order(created_at: :desc)
+	  reviews.each do |review|
+		  #find movie title associated to review
+		  title = Movie.find_by_id(review.movie_id).title
+		  @reviewList << [review, title]
+	  end
   end
 
   private
   def review_params
-  	params.require(:review).permit(:first_name, :last_name, :email, :rating, :movie_id)
+  	params.require(:review).permit(:first_name, :last_name, :email, :rating, :movie_id, :comment)
   end
 
 end

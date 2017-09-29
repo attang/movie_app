@@ -3,7 +3,14 @@ class HomesController < ApplicationController
 	def index
     	@movielist = []	
 
-    	movies = Movie.all.limit(5)
+        if params[:sort] == 'date'
+            movies = Movie.all.order(release_date: :desc)
+        elsif params[:sort] == 'genre'
+            movies = Movie.all.order(genre: :asc)
+        else
+            movies = Movie.all.order(title: :asc)
+        end
+
     	movies.each do |movie|
     		#find all reviews associated to the movie
     		reviews = Review.where(movie_id: movie.id).limit(3)
