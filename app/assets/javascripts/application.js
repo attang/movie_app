@@ -25,7 +25,8 @@ $(document).ready(function() {
       for (var i = 0; i < response['results'].length; i++){
         upcomingMovies.push(
           "<tr>" + "<td>" + response['results'][i]['original_title'] + "</td>" 
-          + "<td>" + "<a href='reviews/new/?id="+ response['results'][i]['id'] +"'>" + 'Leave a review' + "</a></td>"  + "</tr>"
+          + "<td>" + "<a href='reviews/new/?id="+ response['results'][i]['id'] + "&title=" + response['results'][i]['original_title']
+          + "'>" + 'Leave a review' + "</a></td>"  + "</tr>"
         );
       }
 
@@ -37,11 +38,11 @@ $(document).ready(function() {
   });
 
   //single movie
-  var id = $('#movieName').html()
-  $.ajax('https://api.themoviedb.org/3/movie/' + id + '?api_key=4cd9d92801f92d8885c5df0bcff5b0e6&language=en-US', {
-      success: function(response){
-        $('#movieName').html(response['original_title'])
-      }
-  });
+  // var id = $('#movieName').html()
+  // $.ajax('https://api.themoviedb.org/3/movie/' + id + '?api_key=4cd9d92801f92d8885c5df0bcff5b0e6&language=en-US', {
+  //     success: function(response){
+  //       $('#movieName').html(response['original_title'])
+  //     }
+  // });
 
 });

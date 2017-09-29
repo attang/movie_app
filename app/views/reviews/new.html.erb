@@ -1,7 +1,13 @@
 <div class="container">
 	<div class="row">
-		<h2> Leave a review for <span id="movieName"> <%= params[:id]%> </span></h2>
+		<h2> Leave a review for <span id="movieName"> <%= params[:title]%> </span></h2>
 	</div>
+	<% if notice %>
+	  <p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	  <p class="alert alert-danger"><%= alert %></p>
+	<% end %>
 </div>
 
 
@@ -17,19 +23,19 @@
 		        </div>
 		        <div class="form-group">
 		        <%= f.label :rating %>
-		        <%= f.number_field(:rating, in: 1..5, step: 1, class:"form-control") %> 
+		        <%= f.number_field(:rating, required: true, in: 1..5, step: 1, class:"form-control") %> 
 		        </div>
 		        <div class="form-group">
 		        <%= f.label :first_name %>
-		        <%= f.text_field(:first_name, class:"form-control") %> 
+		        <%= f.text_field(:first_name, required: true, class:"form-control") %> 
 		        </div>
 		        <div class="form-group">
 		        <%= f.label :last_name %>
-		        <%= f.text_field(:last_name, class:"form-control") %> 
+		        <%= f.text_field(:last_name, required: true, class:"form-control") %> 
 		        </div>
 		        <div class="form-group">
 		        <%= f.label :email %>
-		        <%= f.text_field(:email, class:"form-control") %> 
+		        <%= f.text_field(:email, required: true, class:"form-control") %> 
 		        </div>
             <%= f.hidden_field :movie_id, value: params[:id] %>
 		        <%= f.submit class: "btn btn-default" %>

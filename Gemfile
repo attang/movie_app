@@ -41,6 +41,8 @@ gem 'spring',        group: :development
 group :development, :test do 
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rspec-rails'
 end
+
 gem "twitter-bootstrap-rails"
 

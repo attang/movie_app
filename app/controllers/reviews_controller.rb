@@ -28,7 +28,8 @@ class ReviewsController < ApplicationController
   		flash[:notice] = "Successfully made a review"
   		redirect_to root_path
   	else
-  		render :action => 'new'
+      flash[:alert] = "Invalid email format"
+  		redirect_to '/reviews/new/?id=' + movie.nk_movie_id.to_s + '&title=' + movie.title
 	  end
   end
 

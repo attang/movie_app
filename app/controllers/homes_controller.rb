@@ -14,7 +14,7 @@ class HomesController < ApplicationController
     	movies.each do |movie|
     		#find all reviews associated to the movie
     		reviews = Review.where(movie_id: movie.id).limit(3)
-    		url = 'reviews/new/?id=' + movie.nk_movie_id.to_s
+    		url = 'reviews/new/?id=' + movie.nk_movie_id.to_s + '&title=' + movie.title
     		@movielist << [movie, url, reviews]
     	end
 
