@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 group :development, :test do 
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
   gem 'sqlite3'
 end
 
