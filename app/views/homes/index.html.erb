@@ -50,7 +50,7 @@
 	    		<tbody>
 	    			<% @reviewlist.each do |review, title| %>
 	    				<tr>
-	    					<td> <%= review.comment %> <br> <%= title %> </td>
+	    					<td> <b> <%= title %>  </b> <br> <%= review.comment %> </td>
 	    					<td> <%= review.rating %>/5 </td>
 	    				</tr>
 	    			<% end %>
