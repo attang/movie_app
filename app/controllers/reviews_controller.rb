@@ -1,3 +1,5 @@
+require 'net/http'
+
 class ReviewsController < ApplicationController
   def new
   	@review = Review.new
